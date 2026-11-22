@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALT School Application Form</title>
+</head>
+<body>
+ 
+    <header>
+        <h1>ALT School Application Form</h1>
+ 
+        <nav aria-label="Global Navigation">
+            <a href="index.html">Home</a> |
+            <a href="form.html">Application Form</a>
+        </nav>
+        <hr>
+    </header>
+ 
+    <main>
+ 
+        <section>
+            <h2>Apply for ALT School Africa</h2>
+ 
+            <form action="#" method="post">
+ 
+                <fieldset>
+                    <legend>Personal Information</legend>
+ 
+                    <p>
+                        <label for="firstName">First Name:</label><br>
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            required>
+                    </p>
+ 
+                    <p>
+                        <label for="lastName">Last Name:</label><br>
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            required>
+                    </p>
+ 
+                    <p>
+                        <label for="gender">Gender:</label><br>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </p>
+ 
+                    <p>
+                        <label for="dob">Date of Birth:</label><br>
+                        <input
+                            type="date"
+                            id="dob"
+                            name="dob"
+                            required>
+                    </p>
+                </fieldset>
+ 
+                <fieldset>
+                    <legend>Contact Information</legend>
+ 
+                    <p>
+                        <label for="email">Email Address:</label><br>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required>
+                    </p>
+ 
+                    <p>
+                        <label for="phone">Phone Number:</label><br>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            required>
+                    </p>
+ 
+                    <p>
+                        <label for="country">Country:</label><br>
+                        <input
+                            type="text"
+                            id="country"
+                            name="country"
+                            required>
+                    </p>
+ 
+                    <p>
+                        <label for="state">State/City:</label><br>
+                        <input
+                            type="text"
+                            id="state"
+                            name="state"
+                            required>
+                    </p>
+                </fieldset>
+ 
+                <fieldset>
+                    <legend>Programme Information</legend>
+ 
+                    <p>
+                        <label for="school">School:</label><br>
+                        <select id="school" name="school" required>
+                            <option value="">Select School</option>
+                            <option value="engineering">
+                                School of Engineering
+                            </option>
+                            <option value="data">
+                                School of Data
+                            </option>
+                            <option value="product">
+                                School of Product
+                            </option>
+                        </select>
+                    </p>
+ 
+                    <p>
+                        <label for="track">Track:</label><br>
+                        <select id="track" name="track" required>
+                            <option value="">Select Track</option>
+                            <option value="frontend">
+                                Frontend Engineering
+                            </option>
+                            <option value="backend">
+                                Backend Engineering
+                            </option>
+                            <option value="cloud">
+                                Cloud Engineering
+                            </option>
+                            <option value="cybersecurity">
+                                Cybersecurity
+                            </option>
+                        </select>
+                    </p>
+ 
+                    <p>
+                        <label for="experience">
+                            Programming Experience
+                        </label><br>
+                        <textarea
+                            id="experience"
+                            name="experience"
+                            rows="5"
+                            cols="40"></textarea>
+                    </p>
+                </fieldset>
+ 
+                <fieldset>
+                    <legend>Account Information</legend>
+ 
+                    <p>
+                        <label for="password">Password:</label><br>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required>
+                    </p>
+ 
+                    <p>
+                        <label for="confirmPassword">
+                            Confirm Password:
+                        </label><br>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            required>
+                    </p>
+                </fieldset>
+ 
+                <p>
+                    <button type="submit">Apply Now</button>
+                </p>
+ 
+            </form>
+        </section>
+ 
+    </main>
+ 
+</body>
+</html>
