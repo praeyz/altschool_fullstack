@@ -1,0 +1,676 @@
+/* =========================================================
+   Chatter landing page
+   Design width: 1440px
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root {
+  --purple: #543ee0;
+  --purple-dark: #4330c4;
+  --purple-light: #d6d1f8;
+  --text: #111111;
+  --grey-text: #626262;
+  --border: #d0d0d0;
+  --cream: #fff7e9;
+  --white: #ffffff;
+  --font: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 72px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 157px;
+  height: 56px;
+  padding: 0 24px;
+  border: 1px solid var(--purple);
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--purple-dark);
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  background: var(--purple);
+  color: var(--white);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.header {
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 97px;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--purple);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  margin: 0 auto;
+  padding-left: 120px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--purple);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 24px;
+}
+
+/* Mobile menu (hidden on desktop) */
+.menu-toggle,
+.menu-icon {
+  display: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 766px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("images/hero.jpg") center 30% / cover no-repeat;
+  color: var(--white);
+}
+
+.hero-content {
+  padding-left: 228px;
+}
+
+.hero h1 {
+  max-width: 900px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 72px;
+}
+
+.hero p {
+  max-width: 740px;
+  margin-top: 28px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.hero .btn {
+  margin-top: 40px;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about {
+  padding: 96px 0 100px;
+}
+
+.about-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.about-text {
+  max-width: 690px;
+}
+
+.about-text p {
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.about-image {
+  width: 501px;
+  height: 404px;
+  object-fit: cover;
+  object-position: center 75%;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   WHY JOIN
+   ========================================================= */
+.why {
+  padding: 0 0 108px;
+}
+
+.why .container {
+  max-width: 1176px;
+}
+
+.why h2 {
+  text-align: center;
+}
+
+.why-intro {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 306px);
+  gap: 49px;
+  margin-top: 56px;
+}
+
+.card {
+  min-height: 322px;
+  padding: 18px 18px 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: rgba(214, 209, 248, 0.33);
+}
+
+.card-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.card-icon svg.filled {
+  fill: var(--text);
+  stroke: none;
+}
+
+.card h3 {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.card p {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--grey-text);
+}
+
+/* =========================================================
+   TESTIMONIAL
+   ========================================================= */
+.testimonial {
+  padding: 96px 0;
+  background: var(--cream);
+}
+
+.testimonial-inner {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding-left: 85px;
+}
+
+.testimonial-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  flex-shrink: 0;
+}
+
+.testimonial-text {
+  max-width: 920px;
+}
+
+blockquote {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.testimonial-author {
+  margin-top: 48px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.testimonial-author span {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.testimonial .btn {
+  margin-top: 24px;
+}
+
+/* =========================================================
+   CONNECT
+   ========================================================= */
+.connect {
+  padding: 96px 0;
+}
+
+.connect-inner {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+
+.avatars {
+  position: relative;
+  width: 390px;
+  height: 410px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  position: absolute;
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/*
+ * Zoom each photo in on the face and move the face to the centre of the circle.
+ * --fx / --fy: where the face is in the frame before zooming
+ * --zoom:      how much to enlarge (also keeps watermarks outside the circle)
+ */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--px, 50%) 50%;
+  transform-origin: var(--fx) var(--fy);
+  transform: translate(calc(50% - var(--fx)), calc(50% - var(--fy))) scale(var(--zoom));
+}
+
+.avatar-1 img {
+  --px: 55%;
+  --fx: 55%;
+  --fy: 33%;
+  --zoom: 1.8;
+}
+
+.avatar-2 img {
+  --fx: 72%;
+  --fy: 52%;
+  --zoom: 1.6;
+}
+
+.avatar-3 img {
+  --fx: 47.5%;
+  --fy: 35%;
+  --zoom: 1.8;
+}
+
+.avatar-1 {
+  top: 0;
+  left: 84px;
+}
+
+.avatar-2 {
+  top: 127px;
+  left: 282px;
+  width: 154px;
+}
+
+.avatar-3 {
+  top: 254px;
+  left: 84px;
+}
+
+.connect-text {
+  max-width: 720px;
+}
+
+.connect-text h2 {
+  line-height: 72px;
+}
+
+.connect-text p {
+  margin-top: 24px;
+  max-width: 580px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.connect-text .btn {
+  margin-top: 40px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  min-height: 402px;
+  padding: 64px 0;
+  background: var(--cream);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 440px 331px 341px auto;
+  align-items: start;
+  padding-left: 81px;
+}
+
+.footer .logo {
+  margin-top: 26px;
+}
+
+.footer-col h4 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.footer-col ul {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-col li {
+  font-size: 18px;
+}
+
+.footer-col a:hover {
+  color: var(--purple);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .hero-content,
+  .testimonial-inner,
+  .footer-inner {
+    padding-left: 40px;
+  }
+
+  .about-image {
+    width: 42%;
+    height: auto;
+    aspect-ratio: 501 / 404;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .connect-inner {
+    gap: 60px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Navigation becomes a drop-down menu */
+  .nav {
+    position: relative;
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    width: 26px;
+    height: 2px;
+    background: var(--text);
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px 40px 32px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+
+  .menu-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+  }
+
+  h2,
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.35;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .hero-content,
+  .testimonial-inner,
+  .footer-inner {
+    padding-left: 0;
+  }
+
+  .hero p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .about-inner,
+  .testimonial-inner,
+  .connect-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 0;
+  }
+
+  .testimonial-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .connect-inner {
+    flex-direction: column-reverse;
+  }
+
+  .connect-text h2 {
+    line-height: 1.35;
+  }
+
+  .avatars {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer .logo {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .nav-menu {
+    padding: 24px 16px 32px;
+  }
+
+  h2,
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .avatars {
+    height: 330px;
+  }
+
+  .avatar {
+    width: 124px;
+    height: 124px;
+  }
+
+  .avatar-1,
+  .avatar-3 {
+    left: 20px;
+  }
+
+  .avatar-2 {
+    top: 102px;
+    left: 180px;
+    width: 124px;
+  }
+
+  .avatar-3 {
+    top: 204px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
