@@ -1,0 +1,1160 @@
+/* =========================================================
+   Scissor landing page — AltSchool Assessment 2
+   Design width: 1440px
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root {
+  --blue: #005ae2;
+  --blue-light: #3284ff;
+  --navy: #1e3448;
+  --text: #141414;
+  --grey-bg: #f9fafb;
+  --icon-bg: #e1ecfd;
+  --border: #e0e0e0;
+  --white: #ffffff;
+  --font: "Gilroy", "Urbanist", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1166px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 43px;
+  padding: 0 32px;
+  border: 1px solid var(--blue);
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: #004bbd;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--blue);
+}
+
+.btn-outline:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn-lg {
+  height: 47px;
+  min-width: 200px;
+}
+
+.btn-block {
+  width: 100%;
+  height: 47px;
+}
+
+.text-link {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+/* Section title with the gradient bar on its left */
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-left: 19px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 4px;
+  height: 48px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #1e3448 0%, rgba(30, 52, 72, 0) 100%);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  max-width: 1166px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.logo-divider {
+  width: 2px;
+  height: 24px;
+  background: currentColor;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--blue);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.login {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* Mobile menu (hidden on desktop) */
+.menu-toggle,
+.menu-icon {
+  display: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  /* Bottom padding leaves room for the grey stage (94px) that sits above the stats band */
+  padding: 182px 0 170px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 45% 50% at 0% 10%, rgba(244, 226, 230, 0.8), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 55% 10%, rgba(235, 238, 222, 0.9), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 100% 15%, rgba(250, 247, 232, 0.9), transparent 70%),
+    linear-gradient(180deg, #fbfaf6 0%, #ffffff 80%);
+}
+
+/* New stacking context so the card's background shapes (z-index: -1) stay visible */
+.hero-content {
+  position: relative;
+  z-index: 0;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 96px;
+  letter-spacing: -0.3px;
+}
+
+.highlight {
+  position: relative;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.swoosh {
+  position: absolute;
+  left: 26%;
+  bottom: -14px;
+  width: 52%;
+  height: 14px;
+  overflow: visible;
+}
+
+.swoosh path {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.hero-text {
+  max-width: 740px;
+  margin: 24px auto 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  margin-top: 62px;
+}
+
+.hero-buttons .btn-lg {
+  min-width: 141px;
+  height: 43px;
+}
+
+/* Card under the hero */
+.hero-card {
+  position: relative;
+  max-width: 768px;
+  min-height: 223px;
+  margin: 80px auto 0;
+  margin-left: calc(50% - 249px);
+  padding: 60px 40px 44px 62px;
+  border: 1px solid var(--blue);
+  border-radius: 20px;
+  background: linear-gradient(110deg, rgba(234, 238, 245, 0.95) 0%, rgba(255, 255, 255, 0.85) 70%);
+}
+
+/* Light blue shapes behind the card */
+.hero-card::before,
+.hero-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #e5eaf4;
+}
+
+.hero-card::before {
+  top: -14px;
+  left: 105px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.hero-card::after {
+  bottom: -20px;
+  left: 4px;
+  width: 210px;
+  height: 60px;
+  border-radius: 0 0 50% 50%;
+}
+
+.chain {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.chain-long {
+  width: 220px;
+  height: 40px;
+}
+
+.chain-arrow {
+  width: 40px;
+  height: 14px;
+}
+
+.chain-short {
+  width: 76px;
+  height: 40px;
+}
+
+.hero-card p {
+  margin-top: 40px;
+  margin-left: 140px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.hero-card strong {
+  font-weight: 700;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+.stats {
+  position: relative;
+  background: var(--grey-bg);
+  padding: 62px 0 70px;
+}
+
+/* Grey "stage" with slanted sides above the stats band */
+.stage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -94px;
+  height: 95px;
+  background: var(--grey-bg);
+  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+}
+
+.stage-shadow {
+  position: absolute;
+  left: 17.7%;
+  right: 15.8%;
+  top: 22px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #f0f1f5, #dfe2ea);
+  box-shadow: 0 6px 6px rgba(160, 170, 190, 0.35);
+}
+
+.stats-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stats h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.stats-list {
+  display: grid;
+  grid-template-columns: 160px 203px 215px auto;
+  margin-top: -2px;
+}
+
+.stats-list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-label {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* =========================================================
+   WHY CHOOSE SCISSORS
+   ========================================================= */
+.why {
+  padding: 128px 0 140px;
+}
+
+.why-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.why-intro {
+  max-width: 400px;
+  margin-left: -19px;
+}
+
+.why-intro p {
+  margin-top: 26px;
+  padding-left: 31px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 340px);
+  column-gap: 28px;
+  row-gap: 70px;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--icon-bg);
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--navy);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.feature-icon .accent {
+  stroke: var(--blue);
+}
+
+.feature h3 {
+  margin-top: 32px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.feature p {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* =========================================================
+   PRICING
+   ========================================================= */
+.pricing {
+  padding: 0 0 120px;
+}
+
+.pricing-header {
+  text-align: center;
+}
+
+.pricing-header p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.plans {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 409px 1fr;
+  align-items: center;
+  max-width: 1088px;
+  margin: 76px auto 0;
+}
+
+/* Shared bordered box behind the two side cards */
+.plans::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 454px;
+  transform: translateY(-50%);
+  border: 1px solid var(--blue);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.plan {
+  position: relative;
+  padding: 26px 40px 44px 87px;
+}
+
+.plan:last-child {
+  padding-left: 46px;
+}
+
+.plan-featured {
+  height: 626px;
+  padding: 92px 40px 40px 65px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.plan-name {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.plan-price {
+  margin-top: 36px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.plan-featured .plan-price {
+  margin-top: 24px;
+}
+
+.plan-desc {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.plan-features {
+  margin-top: 12px;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Check-circle icon drawn as a CSS mask so its colour can change */
+.plan-features li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  background: var(--blue);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.plan-featured .plan-features li::before {
+  background: var(--white);
+}
+
+.pricing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 70px;
+}
+
+/* =========================================================
+   DARK SECTIONS WITH WAVES (Trim URL + CTA)
+   ========================================================= */
+.dark-waves {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--navy);
+  background-image: url("images/waves-left.svg"), url("images/waves-right.svg");
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+  background-size: auto 100%, auto 85%;
+}
+
+/* ---------- Trim URL form ---------- */
+.trim {
+  display: flex;
+  justify-content: center;
+  padding: 84px 16px;
+}
+
+.trim-card {
+  width: 100%;
+  max-width: 476px;
+  padding: 42px 42px 52px;
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.field {
+  width: 100%;
+  height: 47px;
+  padding: 0 22px;
+  border: 1px solid var(--blue-light);
+  border-radius: 12px;
+  background: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blue);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.field::placeholder {
+  color: var(--blue);
+}
+
+.field:focus {
+  box-shadow: 0 0 0 3px rgba(0, 90, 226, 0.15);
+}
+
+.field-url {
+  height: 55px;
+}
+
+.trim-row {
+  display: grid;
+  grid-template-columns: 202px 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+/* Custom arrow for the select box */
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-left: 19px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+.wand {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.terms {
+  margin-top: 26px;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--blue-light);
+}
+
+.terms a {
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   FAQs
+   ========================================================= */
+.faqs {
+  position: relative;
+  padding: 40px 0 130px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 12% 40% at 0% 30%, rgba(203, 230, 248, 0.7), transparent 70%),
+    radial-gradient(ellipse 25% 30% at 100% 100%, rgba(212, 238, 250, 0.7), transparent 70%),
+    var(--white);
+}
+
+.faq-list {
+  max-width: 792px;
+  margin: 60px auto 0;
+  text-align: left;
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-list summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding: 16px 48px 16px 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Hide the default triangle marker */
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Plus sign: two lines; the vertical one disappears when open */
+.faq-list summary::before,
+.faq-list summary::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  width: 16px;
+  height: 1.5px;
+  background: var(--text);
+  transition: transform 0.2s;
+}
+
+.faq-list summary::after {
+  transform: rotate(90deg);
+}
+
+.faq-list details[open] summary::after {
+  transform: rotate(0deg);
+}
+
+.faq-list details:first-child summary {
+  min-height: 0;
+  padding-top: 0;
+}
+
+.faq-list details p {
+  padding-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+/* =========================================================
+   CALL TO ACTION
+   ========================================================= */
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 46px;
+  min-height: 299px;
+  padding: 60px 16px;
+  text-align: center;
+}
+
+.cta h2 {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  position: relative;
+  padding: 80px 0 48px;
+  background:
+    radial-gradient(ellipse 22% 75% at 6% 70%, rgba(222, 240, 250, 0.9), transparent 70%),
+    radial-gradient(ellipse 25% 55% at 100% 100%, rgba(212, 233, 248, 0.9), transparent 70%),
+    var(--white);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 239px 1fr;
+  max-width: 1102px;
+}
+
+.logo-dark {
+  color: var(--navy);
+}
+
+.logo-dark .logo-text {
+  font-size: 22px;
+}
+
+.socials {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.socials svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.socials .fill {
+  fill: var(--text);
+}
+
+.socials .cut {
+  stroke: var(--white);
+  stroke-width: 2.2;
+}
+
+.socials .fill-white {
+  fill: var(--white);
+  stroke: none;
+}
+
+.socials a:hover svg {
+  opacity: 0.7;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 204px 225px 235px auto;
+  row-gap: 44px;
+}
+
+.footer-col-tall {
+  grid-row: span 2;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.footer-col ul {
+  margin-top: 12px;
+}
+
+.footer-col li {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--navy);
+}
+
+.footer-col a:hover {
+  color: var(--blue);
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  margin-top: 26px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  text-align: right;
+}
+
+.footer-bottom span {
+  margin: 0 4px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1180px) {
+  .why-inner {
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .why-intro {
+    margin-left: 0;
+    max-width: 600px;
+  }
+
+  .stats-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hero-card {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  /* Navigation becomes a drop-down menu */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    order: 3;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+  }
+
+  .nav {
+    position: relative;
+    gap: 16px;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 66px;
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: 130px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.5;
+  }
+
+  .hero h1 br {
+    display: none;
+  }
+
+  .swoosh {
+    bottom: -8px;
+    height: 10px;
+  }
+
+  .plans {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 420px;
+  }
+
+  .plans::before {
+    display: none;
+  }
+
+  .plan,
+  .plan:last-child,
+  .plan-featured {
+    height: auto;
+    padding: 40px;
+    border: 1px solid var(--blue);
+    border-radius: 12px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-col-tall {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .login {
+    display: none;
+  }
+
+  .nav-actions .btn {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    gap: 32px;
+  }
+
+  .hero-card {
+    padding: 32px 20px;
+  }
+
+  .chain {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .chain-long {
+    width: 140px;
+  }
+
+  .chain-short {
+    width: 50px;
+  }
+
+  .hero-card p {
+    margin-left: 0;
+  }
+
+  .hero-card br,
+  .pricing-header br {
+    display: none;
+  }
+
+  .section-title,
+  .stats h2,
+  .cta h2 {
+    font-size: 30px;
+  }
+
+  .stats-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+  }
+
+  .feature h3 {
+    font-size: 26px;
+  }
+
+  .pricing-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trim-card {
+    padding: 28px 20px;
+  }
+
+  .trim-row {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-list summary {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom {
+    text-align: left;
+  }
+}
